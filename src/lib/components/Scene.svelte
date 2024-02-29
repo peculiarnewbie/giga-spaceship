@@ -4,6 +4,7 @@
 	import { Color, Mesh, PMREMGenerator, PlaneGeometry, Raycaster, Vector2, Vector3 } from 'three';
 	import { onMount } from 'svelte';
 	import Stars from './Stars.svelte';
+	import Logo from './models/Logo.svelte';
 	import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 	import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 	import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
@@ -103,15 +104,15 @@
 	});
 </script>
 
-<T.PerspectiveCamera makeDefault position={[-5, 6, 10]} fov={25}>
+<T.PerspectiveCamera makeDefault position={[-10, 6, 10]} fov={25}>
 	<OrbitControls enableDamping target={[0, 0, 0]} />
 </T.PerspectiveCamera>
 
 <T.DirectionalLight intensity={1.8} position={[0, 10, 0]} castShadow shadow.bias={-0.0001} />
 
-<T.Mesh bind:ref={spaceShipRef} position={[0, translY, 0]} rotation={[angleZ, 0, angleZ, 'ZXY']}>
+<Logo bind:ref={spaceShipRef} position={[0, translY, 0]} rotation={[angleZ, 0, angleZ, 'ZXY']}>
 	<T.BoxGeometry />
 	<T.MeshBasicMaterial />
-</T.Mesh>
+</Logo>
 
 <Stars />
