@@ -105,7 +105,7 @@
 </script>
 
 <T.PerspectiveCamera makeDefault position={[-10, 6, 10]} fov={25}>
-	<OrbitControls enableDamping target={[0, 0, 0]} />
+	<OrbitControls rotateSpeed={0.1} enableDamping target={[0, 0, 0]} />
 </T.PerspectiveCamera>
 
 <T.DirectionalLight intensity={1.8} position={[0, 10, 0]} castShadow shadow.bias={-0.0001} />
